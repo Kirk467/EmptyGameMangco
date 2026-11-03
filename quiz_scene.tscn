@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cf55gwfsm0ckw"]
+
+[ext_resource type="Script" uid="uid://xnv6d4iobvh3" path="res://scripts/quiz_scene.gd" id="1_ndxw5"]
+[ext_resource type="Texture2D" uid="uid://b30wcrjese6j" path="res://assets/blackboard test.jpg" id="2_l6nb4"]
+[ext_resource type="Theme" uid="uid://lmkr8tk8vxup" path="res://assets/test_theme.tres" id="3_jq671"]
+[ext_resource type="Texture2D" uid="uid://c38syv0hioyde" path="res://assets/floor test.jpg" id="4_ijcxg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkh6a"]
+texture = ExtResource("4_ijcxg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(1.2297407e-05, 0.6533718, 0.13447258, 1)
+
+[node name="Control" type="Control" unique_id=684201458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ndxw5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=607098746]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 467.0
+offset_bottom = 200.0
+localize_numeral_system = false
+theme_override_constants/separation = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer" unique_id=659789712]
+custom_minimum_size = Vector2(1280, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2" unique_id=1697218565]
+layout_mode = 2
+texture = ExtResource("2_l6nb4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/TextureRect" unique_id=1606645108]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_jq671")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Question Goes Here"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1286295516]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pkh6a")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=429070921]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=498823678]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1505656761]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_jq671")
+theme_override_font_sizes/font_size = 50
+text = "Option 1"
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=210730732]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_jq671")
+theme_override_font_sizes/font_size = 50
+text = "Option 2"
+
+[node name="Button3" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=614850209]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_jq671")
+theme_override_font_sizes/font_size = 50
+text = "Option  3"
+
+[node name="Button4" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=214887570]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_jq671")
+theme_override_font_sizes/font_size = 50
+text = "Option 3
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1744555023]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -308.0
+offset_top = 54.0
+offset_right = 308.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_1vivr")
+value = 67.0
+show_percentage = false
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/Button4" to="." method="_on_button_4_pressed"]

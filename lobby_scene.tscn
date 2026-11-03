@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cgjbmdi2fqyfp"]
+
+[ext_resource type="Script" uid="uid://026er344ylko" path="res://scripts/lobby_scene.gd" id="1_g76d4"]
+[ext_resource type="Texture2D" uid="uid://06vd1ika3d0q" path="res://assets/lobbybg.png" id="2_d4cga"]
+[ext_resource type="Theme" uid="uid://lmkr8tk8vxup" path="res://assets/test_theme.tres" id="3_qyrwf"]
+
+[node name="Control" type="Control" unique_id=474948867]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_g76d4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=236734048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d4cga")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=541315981]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 107.0
+offset_right = 244.0
+offset_bottom = 191.0
+theme = ExtResource("3_qyrwf")
+text = "Host Game"
+
+[node name="Button3" type="Button" parent="TextureRect" unique_id=628782065]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.5
+offset_top = 51.0
+offset_right = 158.5
+offset_bottom = 85.0
+grow_horizontal = 2
+theme = ExtResource("3_qyrwf")
+text = "Refresh Available Lobbies"
+
+[node name="Button5" type="Button" parent="TextureRect" unique_id=147842191]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -209.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme = ExtResource("3_qyrwf")
+theme_override_colors/font_color = Color(0.7378671, 0, 0.23452863, 1)
+text = "Disconnect"
+
+[node name="Button6" type="Button" parent="TextureRect" unique_id=254987719]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_qyrwf")
+theme_override_colors/font_color = Color(0.26666668, 0.9764706, 0, 1)
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="TextureRect" unique_id=1172928878]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 251.0
+offset_right = 244.0
+offset_bottom = 335.0
+theme = ExtResource("3_qyrwf")
+text = "Find File"
+
+[node name="SpinBox" type="SpinBox" parent="TextureRect" unique_id=1759175121]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 394.0
+offset_right = 160.5
+offset_bottom = 429.0
+theme = ExtResource("3_qyrwf")
+
+[connection signal="pressed" from="TextureRect/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="TextureRect/Button6" to="." method="_on_button_6_pressed"]
